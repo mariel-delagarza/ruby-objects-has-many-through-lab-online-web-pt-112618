@@ -1,31 +1,31 @@
 class Artist
-  attr_accessor :name 
+  attr_accessor :name
 
-  @@all = [] 
+  @@all = []
 
-  def self.all 
-    @@all 
-  end 
+  def self.all
+    @@all
+  end
 
   def initialize(name)
-    @name = name 
-    @@all << self 
-  end 
+    @name = name
+    @@all << self
+  end
 
   def new_song(name, genre)
     Song.new(name, genre)
-  end 
+  end
 
   def songs
     Song.all.select do |songs|
-      songs.artist = self 
-    end 
-  end 
+      songs.artist = self
+    end
+  end
 
-  def genres 
+  def genres
     songs.map do |song|
-      song.genre 
-    end 
-  end 
-  
+      song.genre
+    end
+  end
+
 end
