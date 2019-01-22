@@ -18,12 +18,14 @@ class Artist
 
   def songs
     Song.all.select do |songs|
-      songs.artist = self
+      songs.artist == self
     end
   end
 
   def genres
-    songs.map(&:genre)
+    songs.map do |song|
+      song.genre 
+    end 
   end
 
 end
