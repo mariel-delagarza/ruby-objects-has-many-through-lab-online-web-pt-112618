@@ -1,2 +1,2 @@
-class Appointment 
+class Appointment
 end 
